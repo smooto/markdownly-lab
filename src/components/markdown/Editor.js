@@ -1,14 +1,22 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styles from './Editor.css';
+import { useDispatch, useSelector  } from '../../hooks/markDownContext';
+import { getMarkDowns } from '../../selectors/markDownSelectors';
 
-const Editor = ({ markdown, updateMarkdown }) => (
-  <textarea className={styles.Editor} value={markdown} onChange={updateMarkdown} />
-);
 
-Editor.propTypes = {
-  markdown: PropTypes.string.isRequired,
-  updateMarkdown: PropTypes.func.isRequired
+const Editor = () => {
+  const state = useSelector(getMarkDowns);
+  const dispatch = useDispatch();
+
+  const handleChange = ({ target }) => {
+    dispatch({ 
+      type: 'UPDATE_MARKDOWN', 
+      payload: target.value
+    });
+  };
+  return (
+    <textarea className={styles.Editor} value={state.markdown} onChange={handleChange} />
+  );
 };
 
 export default Editor;
