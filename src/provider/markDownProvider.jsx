@@ -1,5 +1,5 @@
 import React, { useReducer } from 'react';
-import { MarkDownContext } from '../hooks/markDowncontext';
+import { MarkDownContext } from '../hooks/markDownContext';
 import reducer, { initialState } from '../reducers/markDownReducer';
 
 const markDownProvider = ({ children }) => {

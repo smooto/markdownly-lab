@@ -1,7 +1,7 @@
 import React from 'react';
 import marked from 'marked';
 import styles from 'github-markdown-css/github-markdown.css';
-import { useSelector } from '../../hooks/markDowncontext';
+import { useSelector } from '../../hooks/markDownContext';
 import { getMarkDowns } from '../../selectors/markDownSelectors';
 
 const Preview = () => {
