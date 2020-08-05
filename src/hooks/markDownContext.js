@@ -1,18 +1,18 @@
 import React, { useContext } from 'react'; 
 
-export const MarkDownContext = React.createContext();
+export const markDownContext = React.createContext();
 
 export const useMarkDownState = () => {
-  const { state } = useContext(MarkDownContext); 
+  const { state } = useContext(markDownContext); 
   return state; 
 };
 
 export const useDispatch = () => {
-  const { dispatch } = useContext(MarkDownContext); 
+  const { dispatch } = useContext(markDownContext); 
   return dispatch; 
 };
 
 export const useSelector = selectorFn => {
-  const { state } = useContext(MarkDownContext); 
+  const { state } = useContext(markDownContext); 
   return selectorFn(state);
 };
