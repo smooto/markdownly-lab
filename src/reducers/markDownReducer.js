@@ -1,5 +1,5 @@
 export const initialState = { 
-  markdown: null,
+  markdown: '',
 };
 
 export default function reducer(state, action) {
@@ -7,5 +7,4 @@ export default function reducer(state, action) {
     default: 
       return state;
   }
-    
 }
