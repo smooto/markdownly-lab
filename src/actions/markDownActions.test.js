@@ -9,8 +9,5 @@ describe('Markdown Action Tests', () => {
       type: UPDATE_MARKDOWN, 
       payload: 'Give us a Badge'
     });
-
   });
-
-
 });
