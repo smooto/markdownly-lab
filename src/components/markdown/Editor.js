@@ -1,12 +1,14 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import styles from './Editor.css';
-import { useMarkDownState, useDispatch } from '../../hooks/markDowncontext';
+import { useMarkDownState, useDispatch, useSelector  } from '../../hooks/markDowncontext';
 // import { updateMarkDown } from '../../actions/markDownActions';
+import { getMarkDowns } from '../../selectors/markDownSelectors';
 
 
 const Editor = () => {
-  const { state } = useMarkDownState();
+  const state = useSelector(getMarkDowns);
+  console.log('editor state', state);
   const dispatch = useDispatch();
 
   const handleChange = ({ target }) => {
@@ -15,8 +17,9 @@ const Editor = () => {
       payload: target.value
     });
   };
-
-  <textarea className={styles.Editor} value={state.markdown} onChange={handleChange} />;
+  return (
+    <textarea className={styles.Editor} value={state.markdown} onChange={handleChange} />
+  );
 };
 
 // Editor.propTypes = {

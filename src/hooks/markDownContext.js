@@ -12,3 +12,7 @@ export const useDispatch = () => {
   return dispatch; 
 };
 
+export const useSelector = selectorFn => {
+  const { state } = useContext(MarkDownContext); 
+  return selectorFn(state);
+};
