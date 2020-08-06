@@ -1,10 +1,11 @@
 import React from 'react';
+import List from '../../components/list/List';
 // import PropTypes from 'prop-types';
 
 const LandingPage = () => {
   return (
     <div>
-      {/* SearchBar, List of Markdowns, Filter */}
+      {List}
     </div>
   );
 };

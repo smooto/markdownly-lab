@@ -1,12 +1,15 @@
-export const initialState = { 
-  markdown: '',
+export const initialState = {
+  currentMarkDownTitle: 'title',
+  markdown: {
+    title: 'content'
+  },
 };
 
 export default function reducer(state, action) {
   switch(action.type){
     case 'UPDATE_MARKDOWN':
       return { ...state, markdown: action.payload };
-    default: 
+    default:
       return state;
   }
 }
