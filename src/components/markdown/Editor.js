@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Editor.css';
 import { useDispatch, useSelector  } from '../../hooks/markDownContext';
-import { getCurrentMarkDown, getMarkDowns } from '../../selectors/markDownSelectors';
+import { getCurrentMarkDown } from '../../selectors/markDownSelectors';
 import { useParams } from 'react-router-dom';
 
 
@@ -13,7 +13,7 @@ const Editor = () => {
   const handleChange = ({ target }) => {
     dispatch({
       type: 'UPDATE_MARKDOWN',
-      payload: target.value
+      payload: { id: +id, body: target.value }
     });
   };
 

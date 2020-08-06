@@ -1,5 +1,5 @@
 export const initialState = {
-  currentMarkDownId: '001',
+  // currentMarkDownId: '001',
   markdownArray: [{
     id: '001',
     title: '',
@@ -11,13 +11,11 @@ export default function reducer(state, action) {
   switch(action.type){
     case 'UPDATE_MARKDOWN':
       return { ...state, markdownArray: state.markdownArray.map(markdown => {
-        if(markdown.id === state.currentMarkDownId) {
-          return {
-            ...markdown,
-            body: action.payload
-          };
-        }
-        else return markdown;
+        return {
+          id: markdown.id,
+          title: markdown.title,
+          body: (markdown.id === action.payload.id) ? action.payload.body : markdown.body
+        };
       }) };
 
     case 'CREATE_MARKDOWN':
