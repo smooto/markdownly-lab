@@ -12,7 +12,7 @@ export const getMarkDownTitles = state => {
 };
 
 export const getMarkDownsPreview = state => {
-  return marked(getMarkDowns(state));
+  return marked(getCurrentMarkDown(state));
 };
 
 // landing page: array of all titles

@@ -5,7 +5,7 @@ import { getCurrentMarkDown } from '../../selectors/markDownSelectors';
 
 
 const Editor = () => {
-  const state = useSelector(getCurrentMarkDown());
+  const state = useSelector(getCurrentMarkDown);
   const dispatch = useDispatch();
 
   const handleChange = ({ target }) => {
