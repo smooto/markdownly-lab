@@ -1,14 +1,14 @@
 import React from 'react';
 import { useSelector } from '../../hooks/markDownContext';
-import { getMarkDowns } from '../../selectors/markDownSelectors';
+import { getMarkDownTitles } from '../../selectors/markDownSelectors';
 import { Link } from 'react-router-dom';
 
 const List = () => {
-  const markDownFiles = useSelector(getMarkDowns);
+  const markDownTitles = useSelector(getMarkDownTitles);
 
-  const markDownElements = markDownFiles.map(({ markdown }, i) => (
+  const markDownElements = markDownTitles.map((title, i) => (
     <li key={i}>
-      <Link to={`/${i}`}> <p>{markdown.title}</p></Link>
+      <Link to={`/${i}`}> <p>{title}</p></Link>
     </li>
   ));
 

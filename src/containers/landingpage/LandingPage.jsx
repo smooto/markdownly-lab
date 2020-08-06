@@ -5,7 +5,8 @@ import List from '../../components/list/List';
 const LandingPage = () => {
   return (
     <div>
-      {List}
+      {/* {List} */}
+      <List />
     </div>
   );
 };
