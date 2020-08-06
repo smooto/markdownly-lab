@@ -1,7 +1,8 @@
 export const initialState = {
   currentMarkDownTitle: 'title',
   markdown: {
-    title: 'content'
+    title: 'content',
+    'another title': 'content'
   },
 };
 

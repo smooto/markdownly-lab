@@ -1,6 +1,7 @@
 import marked from 'marked';
 
-// export const getCurrentMarkDown = state => state.markdown[state.currentMarkDownTitle];
+// get content for file "in focus"
+export const getCurrentMarkDown = state => state.markdown[state.currentMarkDownTitle];
 
 // basic get -- returns whole object
 export const getMarkDowns = state => state.markdown;

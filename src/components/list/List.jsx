@@ -9,6 +9,7 @@ const List = () => {
   const markDownElements = markDownTitles.map((title, i) => (
     <li key={i}>
       <Link to={`/${i}`}> <p>{title}</p></Link>
+      <button>delete!!!</button>
     </li>
   ));
 
