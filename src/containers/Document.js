@@ -10,7 +10,7 @@ const Document = () => {
   return (
     <div className={styles.Document}>
       <Editor />
-      {/* <Preview  /> */}
+      <Preview  />
 
     </div>
   );

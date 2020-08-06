@@ -11,8 +11,8 @@ export const getMarkDownTitles = state => {
   return state.markdownArray;
 };
 
-export const getMarkDownsPreview = state => {
-  const currentMarkDown = getCurrentMarkDown(state);
+export const getMarkDownsPreview = (state, id) => {
+  const currentMarkDown = getCurrentMarkDown(state, id);
   return marked(currentMarkDown.body);
 };
 
