@@ -11,7 +11,7 @@ export default function reducer(state, action) {
     case 'UPDATE_MARKDOWN':
       return { ...state, markdown: action.payload };
     case 'CREATE_MARKDOWN':
-      return { ...state, markdown: { ...state.markdown, ...action.payload } };
+      return { ...state, markdown: { ...state.markdown, [action.payload]: '' } };
     default:
       return state;
   }

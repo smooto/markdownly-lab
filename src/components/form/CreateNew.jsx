@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useSelector, useDispatch } from '../../hooks/markDownContext';
+import { useDispatch } from '../../hooks/markDownContext';
 import { createMarkDown } from '../../actions/markDownActions';
 
 export default function CreateNew()  {
