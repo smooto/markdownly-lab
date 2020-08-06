@@ -7,13 +7,13 @@ import { useDispatch } from '../hooks/markDownContext';
 import { setCurrentMarkDownTitle } from '../actions/markDownActions';
 
 const Document = () => {
-  const { title }  = useParams();
+  const { id }  = useParams();
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(setCurrentMarkDownTitle(title));
+    dispatch(setCurrentMarkDownTitle(id));
   }, []);
-  
+
   return (
     <div className={styles.Document}>
       <Editor />

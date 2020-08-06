@@ -10,7 +10,7 @@ export default function App() {
       <Router>
         <Switch>
           <Route exact path="/" component={LandingPage} ></Route>
-          <Route path="/:title" component={Document} ></Route>
+          <Route path="/:id" component={Document} ></Route>
         </Switch>
       </Router>
     </>

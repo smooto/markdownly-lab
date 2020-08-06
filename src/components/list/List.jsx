@@ -6,15 +6,11 @@ import { Link } from 'react-router-dom';
 
 const List = () => {
   const markDownTitles = useSelector(getMarkDownTitles);
-  // const dispatch = useDispatch();
 
-  // const handleClick = (title) => {
-  //   dispatch(setCurrentMarkDownTitle(title));
-  // };
 
-  const markDownElements = markDownTitles.map((title, i) => (
-    <li key={i}>
-      <Link to={`/${title}`}> <p>{title}</p></Link>
+  const markDownElements = markDownTitles.map(({ title, id }) => (
+    <li key={id}>
+      <Link to={`/${id}`}> <p>{title}</p></Link>
     </li>
   ));
 

@@ -12,7 +12,10 @@ export default function reducer(state, action) {
     case 'UPDATE_MARKDOWN':
       return { ...state, markdownArray: state.markdownArray.map(markdown => {
         if(markdown.id === state.currentMarkDownId) {
-          return markdown.body = action.payload;
+          return {
+            ...markdown,
+            body: action.payload
+          };
         }
         else return markdown;
       }) };
@@ -20,7 +23,7 @@ export default function reducer(state, action) {
     case 'CREATE_MARKDOWN':
       return { ...state,
         markdownArray:  state.markdownArray.concat({
-          id: Date.now(), title: action.payload, body: '' }) };
+          id: action.payload.id, title: action.payload.title, body: '' }) };
 
     case 'SET_CURRENT_MARKDOWN_ID':
       return { ...state, currentMarkDownId: action.payload };

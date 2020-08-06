@@ -1,16 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch } from '../../hooks/markDownContext';
 import { createMarkDown } from '../../actions/markDownActions';
 
 export default function CreateNew()  {
   const [title, setTitle] = useState('');
-  const dispatch = useDispatch(); 
+  const [id, setId] = useState('');
+  const dispatch = useDispatch();
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    dispatch(createMarkDown(title));
+    dispatch(createMarkDown({ id, title }));
     setTitle('');
   };
+
+  useEffect(() => {
+    setId(Date.now());
+  }, [title]);
 
   return (
     <form onSubmit={handleSubmit}>
