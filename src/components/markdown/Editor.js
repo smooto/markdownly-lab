@@ -1,11 +1,11 @@
 import React from 'react';
 import styles from './Editor.css';
 import { useDispatch, useSelector  } from '../../hooks/markDownContext';
-import { getMarkDowns } from '../../selectors/markDownSelectors';
+import { getCurrentMarkDown } from '../../selectors/markDownSelectors';
 
 
 const Editor = () => {
-  const state = useSelector(getMarkDowns);
+  const state = useSelector(getCurrentMarkDown());
   const dispatch = useDispatch();
 
   const handleChange = ({ target }) => {
@@ -14,9 +14,12 @@ const Editor = () => {
       payload: target.value
     });
   };
+
   return (
     <textarea className={styles.Editor} value={state.markdown} onChange={handleChange} />
   );
 };
+
+
 
 export default Editor;
