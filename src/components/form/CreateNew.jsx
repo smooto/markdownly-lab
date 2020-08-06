@@ -4,7 +4,6 @@ import { createMarkDown } from '../../actions/markDownActions';
 
 export default function CreateNew()  {
   const [title, setTitle] = useState('');
-  // const { state } = useSelector(); 
   const dispatch = useDispatch(); 
 
   const handleSubmit = (event) => {
@@ -12,10 +11,6 @@ export default function CreateNew()  {
     dispatch(createMarkDown(title));
     setTitle('');
   };
-
-  // const handleChange = ({ target }) => {
-  //   setTitle(target.value);
-  // }; 
 
   return (
     <form onSubmit={handleSubmit}>
