@@ -1,7 +1,7 @@
 import marked from 'marked';
 
 // get content for file "in focus"
-export const getCurrentMarkDown = state => state.markdownArray.find(markdown => markdown.id === state.currentMarkDownId);
+export const getCurrentMarkDown = (state, id) => state.markdownArray.find(markdown => markdown.id === id);
 
 // basic get -- returns whole object
 export const getMarkDowns = state => state.markdownArray;
@@ -12,8 +12,8 @@ export const getMarkDownTitles = state => {
 };
 
 export const getMarkDownsPreview = state => {
-  const currentBody = getCurrentMarkDown(state).body;
-  return marked(currentBody);
+  const currentMarkDown = getCurrentMarkDown(state);
+  return marked(currentMarkDown.body);
 };
 
 

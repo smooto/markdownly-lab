@@ -4,18 +4,18 @@ import { createMarkDown } from '../../actions/markDownActions';
 
 export default function CreateNew()  {
   const [title, setTitle] = useState('');
-  const [id, setId] = useState('');
+  // const [id, setId] = useState('');
   const dispatch = useDispatch();
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    dispatch(createMarkDown({ id, title }));
+    dispatch(createMarkDown({ id: Date.now(), title }));
     setTitle('');
   };
 
-  useEffect(() => {
-    setId(Date.now());
-  }, [title]);
+  // useEffect(() => {
+  //   setId(Date.now());
+  // }, [title]);
 
   return (
     <form onSubmit={handleSubmit}>
