@@ -2,16 +2,17 @@ import React from 'react';
 import { useSelector } from '../../hooks/markDownContext';
 import { getMarkDownTitles } from '../../selectors/markDownSelectors';
 import { Link } from 'react-router-dom';
+// import { setCurrentMarkDownTitle } from '../../actions/markDownActions';
 
 const List = () => {
   const markDownTitles = useSelector(getMarkDownTitles);
 
-  const markDownElements = markDownTitles.map((title, i) => (
-    <li key={i}>
-      <Link to={`/${i}`}> <p>{title}</p></Link>
+
+  const markDownElements = markDownTitles.map(({ title, id }) => (
+    <li key={id}>
+      <Link to={`/${id}`}> <p>{title}</p></Link>
     </li>
   ));
-
 
   return (
     <ul>
