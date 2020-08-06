@@ -1,14 +1,14 @@
 import React, { useReducer } from 'react';
-import { MarkDownContext } from '../hooks/markDownContext';
+import { markDownContext } from '../hooks/markDownContext';
 import reducer, { initialState } from '../reducers/markDownReducer';
 
 const markDownProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   return (
-    <MarkDownContext.Provider value={{ state, dispatch }}>
+    <markDownContext.Provider value={{ state, dispatch }}>
       {children}
-    </MarkDownContext.Provider>
+    </markDownContext.Provider>
   );
 };
 
