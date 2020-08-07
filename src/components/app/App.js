@@ -4,18 +4,18 @@ import LandingPage from '../../containers/landingpage/LandingPage.jsx';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { useSelector, useDispatch } from '../../hooks/markDownContext';
 import { getMarkDowns } from '../../selectors/markDownSelectors';
-import { useLocalStorage } from '../../hooks/useLocalStorage';
 import { setFromLocalStorage } from '../../actions/markDownActions';
 
 export default function App() {
   const state = useSelector(getMarkDowns);
   
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
   
-  // useEffect(() => {
-  //   const session = localStorage.getItem('markdownFiles');
-  //   !session ? localStorage.setItem('markdownFiles', { id: '001', title: '', body: '' }) : dispatch(setFromLocalStorage(session));
-  // }, []);
+  useEffect(() => {
+    const session = localStorage.getItem('markdownFiles');
+    const parsedSession = JSON.parse(session);
+    !parsedSession ? localStorage.setItem('markdownFiles', { id: '001', title: '', body: '' }) : dispatch(setFromLocalStorage(parsedSession));
+  }, []);
 
   useEffect(() => {
     // const state = useSelector(getMarkDowns);
