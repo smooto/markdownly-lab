@@ -15,9 +15,3 @@ export const getMarkDownsPreview = (state, id) => {
   const currentMarkDown = getCurrentMarkDown(state, id);
   return marked(currentMarkDown.body);
 };
-
-
-// landing page: array of all titles
-
-// inidividual editor pages: content for one specific title
-// (formatted preview)

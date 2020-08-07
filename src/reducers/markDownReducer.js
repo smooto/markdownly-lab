@@ -26,6 +26,9 @@ export default function reducer(state, action) {
     case 'SET_CURRENT_MARKDOWN_ID':
       return { ...state, currentMarkDownId: action.payload };
 
+    case 'SET_FROM_LOCALSTORAGE':
+      return { ...state, markdownArray: action.payload };
+
     default:
       return state;
   }
