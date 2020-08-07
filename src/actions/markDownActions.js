@@ -21,3 +21,9 @@ export const setCurrentMarkDownId = (id) => ({
   type: SET_CURRENT_MARKDOWN_ID,
   payload: id
 });
+
+export const SET_FROM_LOCALSTORAGE = 'SET_FROM_LOCALSTORAGE';
+export const setFromLocalStorage = (session) => ({
+  type: SET_FROM_LOCALSTORAGE,
+  payload: session
+});
